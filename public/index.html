@@ -33,6 +33,7 @@
           <button type="submit" id="analyzeButton">Analyze</button>
         </div>
       </form>
+      <div id="urlHistory" class="url-history" hidden></div>
       <div id="messageBox" class="message" role="alert" hidden></div>
     </section>
 
@@ -46,10 +47,21 @@
       </div>
 
       <div id="pageSummary" class="page-summary" hidden></div>
+      <label class="mode-toggle" for="groupedMode">
+        <input id="groupedMode" type="checkbox">
+        <span>
+          <strong>Grouped extraction mode</strong>
+          Best for cards, articles, products, and search results. For tables, keep this off so rows and columns stay easier to read.
+        </span>
+      </label>
       <div id="filtersGrid" class="filters-grid empty-state">
-        Analyze a URL to discover headings, links, images, tables, prices, and dates.
+        Analyze a URL to discover headings, paragraphs, links, images, tables, lists, metadata, prices, and dates.
       </div>
-      <button id="extractButton" class="secondary-action" disabled>Extract Selected Data</button>
+      <div class="filter-actions">
+        <button id="selectAllButton" type="button" class="ghost-action" disabled>Select All Available</button>
+        <button id="clearSelectionButton" type="button" class="ghost-action" disabled>Clear Selection</button>
+        <button id="extractButton" type="button" class="secondary-action" disabled>Extract Selected Data</button>
+      </div>
     </section>
 
     <section class="panel" aria-labelledby="preview-title">
@@ -61,6 +73,11 @@
         </div>
       </div>
 
+      <div id="previewModeControls" class="preview-mode-controls" hidden>
+        <button id="tableViewButton" type="button" class="ghost-action active">Table View</button>
+        <button id="cardViewButton" type="button" class="ghost-action">Card View</button>
+      </div>
+      <div id="resultSummary" class="result-summary" hidden></div>
       <div id="previewArea" class="preview empty-state">
         No extracted data yet.
       </div>
