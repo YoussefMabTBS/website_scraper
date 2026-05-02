@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartFetch</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Adaptive Web Data Extraction</p>
+        <h1>SmartFetch</h1>
+        <p class="subtitle">Analyze one webpage, choose suggested filters, preview clean data, then export JSON or CSV.</p>
+      </div>
+      <div class="status-pill" id="connectionStatus">Ready</div>
+    </section>
+
+    <section class="panel url-panel" aria-labelledby="url-title">
+      <div class="section-heading">
+        <span>1</span>
+        <div>
+          <h2 id="url-title">URL Input</h2>
+          <p>Enter a public webpage URL. SmartFetch supports one page at a time.</p>
+        </div>
+      </div>
+
+      <form id="analyzeForm" class="url-form">
+        <label for="urlInput">Webpage URL</label>
+        <div class="input-row">
+          <input id="urlInput" name="url" type="url" placeholder="https://example.com/products" required>
+          <button type="submit" id="analyzeButton">Analyze</button>
+        </div>
+      </form>
+      <div id="messageBox" class="message" role="alert" hidden></div>
+    </section>
+
+    <section class="panel" aria-labelledby="filters-title">
+      <div class="section-heading">
+        <span>2</span>
+        <div>
+          <h2 id="filters-title">Suggested Filters</h2>
+          <p>Detected filters appear after analysis.</p>
+        </div>
+      </div>
+
+      <div id="pageSummary" class="page-summary" hidden></div>
+      <div id="filtersGrid" class="filters-grid empty-state">
+        Analyze a URL to discover headings, links, images, tables, prices, and dates.
+      </div>
+      <button id="extractButton" class="secondary-action" disabled>Extract Selected Data</button>
+    </section>
+
+    <section class="panel" aria-labelledby="preview-title">
+      <div class="section-heading">
+        <span>3</span>
+        <div>
+          <h2 id="preview-title">Preview</h2>
+          <p>Cleaned results are grouped by selected filter.</p>
+        </div>
+      </div>
+
+      <div id="previewArea" class="preview empty-state">
+        No extracted data yet.
+      </div>
+    </section>
+
+    <section class="panel export-panel" aria-labelledby="export-title">
+      <div class="section-heading">
+        <span>4</span>
+        <div>
+          <h2 id="export-title">Export</h2>
+          <p>Download the latest extraction result.</p>
+        </div>
+      </div>
+
+      <div class="export-actions">
+        <button id="jsonButton" disabled>Export JSON</button>
+        <button id="csvButton" disabled>Export CSV</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
