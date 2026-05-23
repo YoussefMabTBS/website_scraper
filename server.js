@@ -187,6 +187,7 @@ async function fetchHtml(pageUrl) {
       maxContentLength: MAX_HTML_BYTES,
       maxBodyLength: MAX_HTML_BYTES,
       maxRedirects: 0,
+      proxy: false,
       responseType: 'text',
       headers: {
         'User-Agent': 'SmartFetch-University-Project/1.0',

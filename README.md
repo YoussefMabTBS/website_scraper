@@ -37,12 +37,15 @@ SmartFetch is a simple client-server web application for adaptive web data extra
 smartfetch/
   package.json
   server.js
+  PROJECT_EXPLANATION.md
   public/
     index.html
     style.css
     app.js
   README.md
 ```
+
+For a file-by-file explanation of the code, libraries, and request flow, see `PROJECT_EXPLANATION.md`.
 
 ## Install
 
